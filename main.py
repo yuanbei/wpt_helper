@@ -93,7 +93,8 @@ def main():
     sucess = get_test_result(parameters.target,
                              json_data_url,
                              parameters.output)
-    return sucess
+
+    return 0 if sucess else -1
 
 if __name__ == '__main__':
     sys.exit(main())
