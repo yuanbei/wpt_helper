@@ -38,8 +38,11 @@ def get_test_result(test_target, json_data_url, result_file_path):
             retry_count += 1
             url, json_data = json_data_fetcher.get_data()
             response = json.loads(json_data)
+            formatted_json_data = unicode(json.dumps(response, indent=4))
             if response['statusCode'] == 200:
-                save_test_result(test_target, json_data, result_file_path)
+                save_test_result(test_target,
+                                 formatted_json_data,
+                                 result_file_path)
                 print "Get test result of %s successfully!" % test_target
                 return True
             else:
@@ -50,9 +53,6 @@ def get_test_result(test_target, json_data_url, result_file_path):
 
 
 def save_test_result(test_target, result, result_file_path):
-    hashed_file_name =\
-        hashlib.new("md5", test_target).hexdigest() + ".json"
-    result_file_path = os.path.join(result_file_path, hashed_file_name)
     with io.open(result_file_path, "w") as file_handle:
         file_handle.write(result)
 
@@ -78,7 +78,7 @@ def main():
 
     parser.add_argument(
         '-o', '--output', type=str,
-        help='Output directory where the result files will be stored'
+        help='Output file path where the result files will be stored.'
     )
 
     parameters = parser.parse_args()
