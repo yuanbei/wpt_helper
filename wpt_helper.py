@@ -49,7 +49,7 @@ class WPTHelper(object):
 
     def _get_test_result(self, test_target, json_data_url, result_file_path):
         retry_count = 0
-        while retry_count <= 20:
+        while retry_count <= 100
             json_data_fetcher = URLFetcher(json_data_url)
             if json_data_fetcher.fetch(1):
                 retry_count += 1
@@ -65,7 +65,7 @@ class WPTHelper(object):
                 else:
                     print "statusCode: %s, statusText: %s"\
                         % (response['statusCode'], response['statusText'])
-                    time.sleep(5 * 60)
+                    time.sleep(5 * 6)
         return False
 
     def _save_test_result(self, test_target, result, result_file_path):
