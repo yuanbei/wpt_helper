@@ -49,7 +49,7 @@ class WPTHelper(object):
 
     def _get_test_result(self, test_target, json_data_url, result_file_path):
         retry_count = 0
-        while retry_count <= 100
+        while retry_count <= 100:
             json_data_fetcher = URLFetcher(json_data_url)
             if json_data_fetcher.fetch(1):
                 retry_count += 1
