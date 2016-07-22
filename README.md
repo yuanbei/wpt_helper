@@ -13,6 +13,6 @@ optional arguments:
   -t TARGET, --target TARGET
                         target url which will be tested.
   -k KEY, --key KEY     WebPagetest api key.
-  -o OUTPUT, --output OUTPUT
-                        Output file path where the result files will be stored.
+  -r RESULT, --result RESULT
+                        Result file path where the result files will be stored.
 ```
