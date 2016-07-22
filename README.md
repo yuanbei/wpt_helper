@@ -2,7 +2,7 @@ This project is a helper to start a webpagetest task through WebpageTest
 RESTful API. Download and save test result into given file path.
 
 ```
-usage: main.py [-h] [-w WEBPAGETEST] [-t TARGET] [-k KEY] [-o OUTPUT]
+usage: main.py [-h] [-w WEBPAGETEST] [-t TARGET] [-k KEY] [-r RESULT]
 
 WebPagetest helper to run test on WebPagetest instance.
 
